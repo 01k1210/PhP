@@ -37,13 +37,11 @@ $users = [
 ];
 $new_Users = [];
 foreach ($users as $us){
-    if (array_search('Оксана',$us) !== false){
+    if (array_search('Фотография',$us['hobbies']) !== false){
        $new_Users[]= $us;
     }
 };
 var_dump($new_Users);
-// $a1 = array('country' => array('Russia', 'Ukraine', 'Belarus'));
-// var_dump($a1);
 
 // ЗАДАЧА 2
 // Дан массив $tours. Увеличить стоимость каждого тура на 10%. Стоимость австралийских туров на 12%
