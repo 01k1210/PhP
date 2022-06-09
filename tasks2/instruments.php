@@ -1,0 +1,29 @@
+<?php
+$instruments = require_once 'data.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks2</title>
+</head>
+<body>
+    <div>
+    <?php foreach($instruments as $instrument): ?>
+        <div>
+            <h3><?=$instrument['title']?></h3>
+            <img style="width: 300px;" src="images/<?=$instrument['image']?>" alt="">
+            <p><?=$instrument['price']?>Rub.</p>
+            <?php if($instrument['count'] === 0): ?>
+                <p style="color: red">Товара нет в наличии</p>
+                <?php else :?>
+                    <p>Остаток на складе: <?=$instrument['count']?>шт.</p>
+                    <a href="instrument.php?id=<?=$instrument['id']?>">Подробнее</a>
+                    <?php endif; ?>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</body>
+</html>
