@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        header('Location: profile.php');
+    }
 
 ?>
 <!DOCTYPE html>
@@ -12,13 +16,19 @@
 </head>
 <body>
     <!-- форма авторизации -->
-        <form action="" method="post">
+        <form action="signin.php" method="post" >
             <h1>Авторизация:</h1>
+            <?php
+            if(isset($_SESSION['message'])){
+                echo '<p class="massage"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+            ?> 
             <label for="login">Логин</label>
-            <input name="login" type="text">
+            <input  name="login" type="text">
             <label for="password">Пароль</label>
             <input name="password" type="password">
-            <button>Зарегистрироваться</button>
+            <input type="submit">
             <p>У вас ешё нет аккаунта? - <a href="register.php">Зарегистрируйтесь!</a></p>
         </form>
 </body>

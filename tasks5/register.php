@@ -1,14 +1,8 @@
 <?php
     session_start();
-// $sql = 'SELECT * FROM tb_courses WHERE duration > 2'; проверка на сущкствования пользователя из массива post 
-// если пользователя нет, выполняем insert со всеми ключами массива post 
-
-// use sql_lessons;
-// select * from tb_users; проверка существования таблицы 
-// с 11 утра в субботу 
-
-
-
+    if(isset($_SESSION['user'])){
+        header('Location: profile.php');
+    }
 
 ?>
 <!DOCTYPE html>

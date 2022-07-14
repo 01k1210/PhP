@@ -16,7 +16,7 @@ $tb_users = 'CREATE TABLE IF NOT EXISTS tb_users(
     login VARCHAR(200) ,
     password VARCHAR(100),
     email VARCHAR(100),
-    telephone INT,
+    telephone VARCHAR(20),
     photo VARCHAR(100)
  );';
 $result = $connection->exec($tb_users);
